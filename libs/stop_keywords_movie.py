@@ -1,6 +1,5 @@
 # coding: utf-8
 
-
 quality = ['BRRip','BDrip','HD', 'HDDVDRip','DVDRip','R5','DVDScr', 'Workprint', 'TS', 'TC','CAM','WEBRip','SHQ','HQ','HC','WEB','DL','Full','screener','bluray','rip','bd','dd','SHQ','hdrip','hdcam']
 quality_format = ['720p','1080p','3D']
 codecs  = ['DivX','DivX HD','XviD','MPEG-1','MPEG-2','OGM','H.264','H 264','x264','h264']

@@ -157,13 +157,13 @@ def get_legend(imdbID):
 			return json.dumps({'error':{'code':2,'mensage':str(inst)},'response':response})
 
 
-imdbID = "tt3235888"
-f = open(imdbID +".json",'w')
+# imdbID = "tt3235888"
+# f = open(imdbID +".json",'w')
 
-legendas = get_legend(imdbID)
+# legendas = get_legend(imdbID)
 
-print (legendas)
+# print (legendas)
 
-f.write(legendas)
+# f.write(legendas)
 
-f.close
+# f.close

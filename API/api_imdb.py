@@ -138,7 +138,7 @@ def get_movie(link):
 				if divs.xpath("//table//tbody//tr//td[@id='overview-top']//div[@itemprop='creator']//a//span"):
 					movie['Writer'] = ", ".join((c.text  for c in divs.xpath("//table//tbody//tr//td[@id='overview-top']//div[@itemprop='creator']//a//span")))
 				if ((divs.xpath("//table//tbody//tr//td[@id='overview-top']//p"))):
-					movie['Description'] = ((divs.xpath("//table//tbody//tr//td[@id='overview-top']//p")))[1].text.strip('\n')
+					movie['Description'] = ((divs.xpath("//table//tbody//tr//td[@id='overview-top']//p")))[1].text
 				if ((divs.xpath("//table//tbody//tr//td[@id='overview-top']//div[@class='star-box giga-star']//div[@class='titlePageSprite star-box-giga-star']"))):
 					movie['ImdbRating'] = ((divs.xpath("//table//tbody//tr//td[@id='overview-top']//div[@class='star-box giga-star']//div[@class='titlePageSprite star-box-giga-star']")))[0].text.strip(' ').replace(',','.')
 				if ((divs.xpath("//table//tbody//tr//td[@id='overview-top']//div[@class='star-box giga-star']//div[@class='star-box-details']//a"))):
@@ -178,7 +178,7 @@ def get_movie(link):
 					cast_actor.append(tmp_actor)
 				movie['cast_actor'] = cast_actor
 				if divs.xpath("//div[@id='titleStoryLine']//div//p"):
-					movie['Plot'] = divs.xpath("//div[@id='titleStoryLine']//div//p")[0].text.replace('\n','')
+					movie['Plot'] = divs.xpath("//div[@id='titleStoryLine']//div//p")[0].text
 				if divs.xpath("//div[@id='titleDetails']//div"):
 					movie['Country'] = "".join(c.text for c in divs.xpath("//div[@id='titleDetails']//div")[1]).strip('\n').split(':')[1].replace('|', ', ')				
 					movie['Language'] = "".join(c.text for c in divs.xpath("//div[@id='titleDetails']//div")[2]).strip('\n').split(':')[1].replace('|', ', ')
@@ -190,26 +190,4 @@ def get_movie(link):
 
 	movie['Response'] = 'True'
 	return movie
-
-class Movie():
-
-	title = ''
-	year = ''
-	rated = ''
-	release = ''
-	runtime = ''
-	genre = ''
-	director = ''
-	writer = ''
-	plot = ''
-	language = ''
-	country = ''
-	awards = ''
-	poster = ''
-	meta_score = ''
-	imdb_rating = ''
-	imdb_votes = ''
-	imdb_id = ''
-	type_ = ''
-	response = ''
 
