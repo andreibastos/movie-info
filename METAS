@@ -1,0 +1,9 @@
+metas 
+	para uma pasta de um filme obter:
+		informações gerais no site do imdb e gerar um json
+
+		download das soundstracks pelo youtube-dl  save in ./soundstracks/
+
+		download de n trailers pelo youtube-dl save in  ./trailers/
+
+		baixar todas as legendas em openSubtitles save in ./subtitles/
