@@ -1,5 +1,5 @@
 # Movie-info
-Movie-info is uma tool to get informations of movies, soundtracks and subtitles.
+Movie-info is uma tool to get informations of movie and get  soundtracks and subtitles.
 
 based in
   - Python 2
