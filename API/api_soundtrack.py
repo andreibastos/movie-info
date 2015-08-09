@@ -11,7 +11,7 @@ url_base_find = url_base+'/results?'
 
 
 words_by_search = ['','soundtrack']
-# words_by_search = ['']
+
 def search_soundtrack(soundtrack_name,soundtrack_movie_name):
 	words_by_search[0] = soundtrack_movie_name
 	
@@ -61,6 +61,7 @@ def search_soundtrack(soundtrack_name,soundtrack_movie_name):
 			break
 		except Exception as e:
 			error = e 
+			response = False
 	
 	return json.dumps({'response':response,'results':results, 'meta':{'mensage':str(error)}},indent = 4, sort_keys=True) 
 
@@ -69,4 +70,5 @@ def search_soundtrack(soundtrack_name,soundtrack_movie_name):
 
 soundtrack_name = "Taya's Theme"
 soundtrack_movie_name = 'American Sniper'
+
 print search_soundtrack(soundtrack_name,soundtrack_movie_name)
