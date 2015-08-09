@@ -1,9 +1,17 @@
 metas 
-	para uma pasta de um filme obter:
-		informações gerais no site do imdb e gerar um json
+	para nome de filme de um filme obter:
+		ok informações gerais no site do imdb e gerar um json
 
+		ok baixar o poster do movie
+
+		ok baixar as fotos do atores
+
+		ok baixar n legendas em openSubtitles save in ./subtitles/
+		
 		download das soundstracks pelo youtube-dl  save in ./soundstracks/
 
+		baixar 2 trailers
+		
 		download de n trailers pelo youtube-dl save in  ./trailers/
 
-		baixar todas as legendas em openSubtitles save in ./subtitles/
+
