@@ -47,7 +47,7 @@ def get_soundtrack(link):
 
 	for divs in tree.xpath("//div[@id='soundtracks_content']//div[@class='desc']"):		
 		qnt = divs.text
-		print '\t'+qnt
+		
 	if qnt:
 		for divs in tree.xpath("//div[@class='list']//div"):	
 			class_name = divs.get('class')
@@ -61,7 +61,7 @@ def get_soundtrack(link):
 	
 def get_movie(link):
 	# link = '/home/andrei/scripts/torrent/imdb/movie.html'	
-	print ('Downloading..\t['+link+']')
+	print ('Downloading page..\t['+link+']')
 	movie = {}
 	movie['Response'] = False
 	movie['Poster'] = 'N/A'

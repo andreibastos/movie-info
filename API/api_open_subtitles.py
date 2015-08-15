@@ -34,12 +34,15 @@ def get_legend(imdbID):
 			for a in div.xpath('h1/a'):
 				legend['link_download'] = a.get('href')
 				legend['name_movie'] = a.xpath('span')[0].text
+				legend['downloads'] = 0
 		
 
 		for span in div.xpath("//div[@itemtype='http://schema.org/Movie']/h2"):
 				legend['name_movie_file'] = span.text
+				legends = []
+				legends.append(legend)
 		response = True
-		return json.dumps({'response':response,'legend':legend})
+		return json.dumps({'response':response,'legends':legends})
 
 	except Exception as msg:
 		legends = []

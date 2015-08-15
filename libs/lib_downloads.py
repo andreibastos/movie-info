@@ -79,8 +79,9 @@ def download_info_movie(movie,path_movie, download_legends=True,download_poster=
 
 			legends  = get_legend(imdbID)
 			legends = json.loads(legends)
-			f = open(os.path.join(path_movie_subtitles,Title+'[legend]')+'.json','w')			
-			json.dump(legends,f,indent=4)
+			fileToJson = open(os.path.join(path_movie_subtitles,Title+'[legend]')+'.json','w')			
+			json.dump(legends,fileToJson, indent=4,sort_keys = True)
+			fileToJson.close()
 			# legends = json.loads(json_data)
 			response = legends['response']
 			if response:
@@ -168,11 +169,11 @@ def download_info_movie(movie,path_movie, download_legends=True,download_poster=
 			response = list_search_soundtrack['response']
 			if response:
 				results = list_search_soundtrack['results']
-
-				if results and not os.path.isfile(path_movie_soundtracks+soundtrack+'.mp3'):					
+				name_file_soundtrack = path_movie_soundtracks+soundtrack+'['+Title+']'
+				if results and not os.path.isfile(name_file_soundtrack+'.*'):					
 					link_one = results[0]					
 					command = 'youtube-dl '
-					args = "--extract-audio --audio-format best -o \""+path_movie_soundtracks+soundtrack+ ".%(ext)s\" " + link_one					
+					args = "--extract-audio --audio-format mp3 -o \""+name_file_soundtrack+ ".%(ext)s\" " + link_one					
 					call = command
 					call +=args
 					return_code = subprocess.check_call(call,shell=True)
